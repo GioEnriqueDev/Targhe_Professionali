@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="it" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Targhe in Ottone Premium | L'eleganza che il tuo studio merita</title>
-    <meta name="description" content="Targhe professionali in ottone inciso a laser per Studi Legali e Notarili. Configurala ora a partire da 44,00€ con spedizione in 24/48h.">
-    
+    <meta name="description"
+        content="Targhe professionali in ottone inciso a laser per Studi Legali e Notarili. Configurala ora a partire da 44,00€ con spedizione in 24/48h.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS (CDN for instant deployment) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,19 +22,21 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: {
-                            DEFAULT: '#0B132B',
-                            light: '#14213d'
+                        brand: {
+                            light: '#EAEBEA', // Background color from screenshot
+                            beige: '#F5F5F0', // Warm off-white for sections
+                            teal: '#84C7C0', // Brand accent from the logo
+                            dark: '#2A2A2A',
+                            text: '#4A4A4A'
                         },
-                        charcoal: '#1A1A1A',
                         gold: {
                             light: '#F8E7A0',
-                            DEFAULT: '#D4AF37',
-                            dark: '#9A7B22'
+                            DEFAULT: '#C5A059',
+                            dark: '#8A6D3B'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Montserrat', 'sans-serif'], // Cleaner sans-serif matching modern corporate
                         serif: ['Playfair Display', 'serif'],
                     }
                 }
@@ -40,16 +46,14 @@
 
     <!-- Custom CSS (3D FX, Glare, Mobile fallbacks) -->
     <style>
-        /* Sfondo Premium */
         body {
-            background-color: #0B132B;
-            background-image: radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                              radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            background-color: #EAEBEA;
+            /* Light grey/silver background from reference */
         }
 
         /* 3D Container & Hover Physics */
         .perspective-container {
-            perspective: 1200px;
+            perspective: 1500px;
             transform-style: preserve-3d;
         }
 
@@ -58,40 +62,45 @@
             position: relative;
             width: 100%;
             aspect-ratio: 16 / 10;
-            background: linear-gradient(135deg, #C5A059 0%, #F5D76E 25%, #8A6D3B 50%, #E2C782 75%, #A47222 100%);
-            border-radius: 6px;
-            box-shadow: 
-                0 30px 60px rgba(0,0,0,0.6),
-                inset 0 0 0 2px rgba(255,255,255,0.4),
-                inset 0 0 20px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #D4AF37 0%, #F8E7A0 25%, #AA7C11 50%, #EAD48F 75%, #8B6508 100%);
+            border-radius: 4px;
+            box-shadow:
+                0 40px 80px rgba(0, 0, 0, 0.15),
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.6),
+                inset 0 0 20px rgba(139, 101, 8, 0.4);
             transform-style: preserve-3d;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
             will-change: transform;
         }
 
         /* Bordo Interno Placca */
         .plaque-inner {
             position: absolute;
-            inset: 16px;
-            border: 1px solid rgba(0,0,0,0.15);
-            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1) 40%, transparent);
-            transform: translateZ(20px);
+            inset: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2) 40%, transparent);
+            transform: translateZ(15px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border-radius: 2px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
         }
 
         /* Effetto Riflesso Metallico Dinamico (Glare) */
         .plaque-glare {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 6px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 4px;
             pointer-events: none;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, transparent 55%);
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.5s ease;
             transform: translateZ(5px);
             mix-blend-mode: overlay;
         }
@@ -102,28 +111,41 @@
 
         /* Testo "Inciso" */
         .engraved {
-            color: #4A3B1B;
-            text-shadow: 1px 1px 1px rgba(255,255,255,0.5), -1px -1px 1px rgba(0,0,0,0.3);
+            color: #2D2411;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4), -1px -1px 0px rgba(0, 0, 0, 0.2);
         }
 
         /* Viti Placca */
         .screw {
             position: absolute;
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: linear-gradient(135deg, #f8e7a0, #9A7B22);
-            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6), 0 1px 1px rgba(255,255,255,0.5);
-            border: 1px solid #7c6218;
-            transform: translateZ(5px);
+            box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.8);
+            border: 1px solid #5a460e;
+            transform: translateZ(6px);
         }
+
         .screw::before {
             content: '';
             position: absolute;
-            top: 50%; left: 50%;
-            width: 70%; height: 1.5px;
-            background: rgba(0,0,0,0.6);
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.5);
             transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        /* Category Card Glare (Subtle FX) */
+        .category-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         /* Mobile Graceful Fallback */
@@ -131,115 +153,183 @@
             .plaque-card {
                 transform: none !important;
                 transition: none !important;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             }
+
             .plaque-glare {
                 display: none;
             }
         }
     </style>
 </head>
-<body class="text-white antialiased min-h-screen relative pb-24 md:pb-0 overflow-x-hidden flex flex-col">
 
-    <!-- Navbar -->
-    <nav class="w-full relative z-20 top-0 border-b border-white/10 bg-navy/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Regenerated Premium Logo -->
+<body class="text-brand-text antialiased min-h-screen relative pb-24 md:pb-0 overflow-x-hidden flex flex-col">
+
+    <!-- Navbar: Light theme based on screenshot -->
+    <nav class="w-full relative z-50 bg-white border-b border-gray-100 shadow-sm sticky top-0">
+        <div class="max-w-7xl mx-auto px-6 h-[88px] flex items-center justify-between">
+            <!-- Regenerated Logo with Light Theme (Teal focus) -->
             <div class="flex items-center gap-3">
-                <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gold">
-                    <!-- Left Building -->
-                    <path d="M20 85 V 55 L 35 45 V 85" stroke="currentColor" stroke-width="4" stroke-miterlimit="10"/>
-                    <!-- Middle Building -->
-                    <path d="M35 85 V 35 L 55 25 V 85" stroke="currentColor" stroke-width="4" stroke-miterlimit="10"/>
-                    <!-- Right Building -->
-                    <path d="M55 85 V 15 L 75 5 V 85" stroke="currentColor" stroke-width="4" stroke-miterlimit="10"/>
-                    <!-- Base line -->
-                    <path d="M12 85 H 83" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="text-brand-teal">
+                    <path d="M20 85 V 50 L 35 40 V 85" stroke="currentColor" stroke-width="3" stroke-miterlimit="10" />
+                    <path d="M35 85 V 30 L 55 20 V 85" stroke="currentColor" stroke-width="3" stroke-miterlimit="10" />
+                    <path d="M55 85 V 10 L 75 0 V 85" stroke="currentColor" stroke-width="3" stroke-miterlimit="10" />
+                    <path d="M10 85 H 85" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
                 </svg>
-                <div class="font-sans font-bold text-xl tracking-wide text-white flex flex-col leading-none">
-                    Targhe<span class="text-gold">Professionali</span>
+                <div class="font-sans text-xl tracking-tight text-brand-dark flex flex-col leading-none">
+                    <span class="font-normal">Targhe</span>
+                    <span class="font-bold">Professionali</span>
                 </div>
             </div>
 
-            <div class="hidden md:flex items-center gap-6">
-                <span class="text-gray-300 text-sm font-medium">✨ Affidata da oltre 2000 Studi in Italia</span>
+            <!-- Header utilities from screenshot -->
+            <div class="hidden lg:flex items-center gap-8">
+                <div class="relative">
+                    <input type="text" placeholder="Ricerca nel nostro catalogo..."
+                        class="bg-gray-50 border border-gray-200 rounded-full py-2.5 px-6 pl-12 w-80 text-sm focus:outline-none focus:border-brand-teal transition-colors">
+                    <svg class="w-4 h-4 text-gray-400 absolute left-4 top-3.5" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                <div class="flex items-center gap-5">
+                    <svg class="w-6 h-6 text-gray-500 hover:text-brand-teal cursor-pointer transition-colors"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <svg class="w-6 h-6 text-gray-500 hover:text-brand-teal cursor-pointer transition-colors"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                </div>
+                <button
+                    class="border border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white font-medium px-6 py-2.5 rounded text-sm transition-all">
+                    Richiedi un preventivo
+                </button>
             </div>
+
+            <!-- Mobile Menu Icon -->
+            <button class="lg:hidden text-gray-600">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation Links Dropdown mimicking site -->
+        <div
+            class="hidden lg:flex w-full bg-white border-t border-gray-100 justify-center gap-8 py-3 text-sm font-medium text-gray-600">
+            <span class="hover:text-brand-teal cursor-pointer flex items-center gap-1">Targhe Personalizzate <svg
+                    class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg></span>
+            <span class="text-brand-teal cursor-pointer flex items-center gap-1">Targhe per Attività <svg
+                    class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg></span>
+            <span class="hover:text-brand-teal cursor-pointer flex items-center gap-1">Targhette <svg class="w-3 h-3"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg></span>
+            <span class="hover:text-brand-teal cursor-pointer">Insegne</span>
         </div>
     </nav>
 
-    <!-- Main Hero -->
-    <main class="flex-grow flex items-center relative z-10 pt-10 pb-20 md:py-20">
-        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-            
-            <!-- Left Column: Copy & Conversions (CRO optimized) -->
+    <!-- Main Hero: Redesigned for Light Theme -->
+    <main class="flex-grow flex items-center relative z-10 pt-16 pb-24 md:py-24 bg-brand-light">
+        <!-- Subtle background pattern to match the screenshot's premium feel -->
+        <div class="absolute inset-0 opacity-5"
+            style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center relative z-10">
+
+            <!-- Left Column: Copy & Conversions -->
             <div class="order-2 lg:order-1 space-y-8">
                 <div class="space-y-4">
-                    <p class="text-gold font-bold tracking-widest uppercase text-sm flex items-center gap-2">
-                        <span class="w-8 h-px bg-gold"></span> Linea Notai & Avvocati
+                    <p class="text-brand-teal font-semibold tracking-widest uppercase text-xs flex items-center gap-2">
+                        <span class="w-8 h-px bg-brand-teal"></span> Eccellenza per Professionisti
                     </p>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.15] text-white">
-                        Targhe in Ottone Premium<br>
-                        <span class="text-gold italic font-medium mt-2 block">L'eleganza che il tuo studio merita.</span>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-light leading-[1.2] text-brand-dark tracking-tight">
+                        Personalizza la tua targa con stile, precisione e materiali esclusivi.
                     </h1>
-                    <p class="text-gray-300 text-lg md:text-xl font-light max-w-xl leading-relaxed mt-4">
-                        Il primo biglietto da visita per il tuo studio. Realizzate in ottone massiccio con incisione laser millimetrica, pensate per durare in eterno e comunicare assoluta autorevolezza.
+                    <p class="text-gray-500 text-lg md:text-xl font-normal max-w-xl leading-relaxed mt-4">
+                        Materiali premium e personalizzazione completa: crea la targa che esprime al meglio la tua
+                        identità professionale. Ideale per Studi Legali e Notarili.
                     </p>
                 </div>
 
-                <!-- Price Block -->
-                <div class="bg-navy-light/50 border border-white/10 rounded-lg p-6 max-w-max">
-                    <p class="text-gray-400 text-sm uppercase tracking-wider mb-1">Crea su misura</p>
+                <!-- Price Block (Light theme) -->
+                <div class="bg-white/60 backdrop-blur-sm border border-gray-200 rounded-xl p-6 max-w-max shadow-sm">
+                    <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Qualità Garantita</p>
                     <div class="flex items-end gap-3">
-                        <span class="text-4xl font-bold text-white">44,00€</span>
-                        <span class="text-gray-400 mb-1 text-sm">(Prezzo di partenza)</span>
+                        <span class="text-3xl font-light text-brand-dark">A partire da <span
+                                class="font-bold text-gray-900">44,00€</span></span>
                     </div>
                 </div>
 
                 <!-- Main CTA -->
-                <div id="main-cta-container">
-                    <button class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 bg-gold hover:bg-gold-light text-navy font-bold text-lg rounded shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all transform hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(212,175,55,0.5)]">
-                        Configura Ora la tua Targa
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <div id="main-cta-container" class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-brand-teal hover:bg-[#6EB6B0] text-white font-medium text-base rounded shadow-lg shadow-brand-teal/30 transition-all transform hover:-translate-y-0.5">
+                        Scopri le targhe
                     </button>
-                    <p class="text-xs text-gray-500 mt-3 flex items-center gap-1 justify-center sm:justify-start">
-                        <svg class="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        Nessun obbligo di acquisto in fase di configurazione
-                    </p>
+                    <button
+                        class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white border border-gray-300 hover:border-brand-teal hover:text-brand-teal text-gray-700 font-medium text-base rounded shadow-sm transition-all">
+                        Richiedi un preventivo
+                    </button>
                 </div>
 
-                <!-- Trust Badges (Crucial for Ad Traffic) -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                <!-- Trust Badges (Crucial for Ad Traffic - Light theme adjusted) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 mt-8 border-t border-gray-200/60">
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full bg-navy-light border border-gray-700 flex items-center justify-center text-gold flex-shrink-0">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-teal flex-shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
                         </div>
                         <div>
-                            <h4 class="text-white font-semibold text-sm">Spedizione 24/48h</h4>
-                            <p class="text-gray-400 text-xs">Rapida e tracciata</p>
+                            <h4 class="text-brand-dark font-semibold text-sm">Spedizione 24/48h</h4>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full bg-navy-light border border-gray-700 flex items-center justify-center text-gold flex-shrink-0">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-teal flex-shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
                         </div>
                         <div>
-                            <h4 class="text-white font-semibold text-sm">Ottone Premium</h4>
-                            <p class="text-gray-400 text-xs">Massima lucentezza</p>
+                            <h4 class="text-brand-dark font-semibold text-sm">Ottone Premium</h4>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full bg-navy-light border border-gray-700 flex items-center justify-center text-gold flex-shrink-0">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                        <div
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-teal flex-shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
+                                </path>
+                            </svg>
                         </div>
                         <div>
-                            <h4 class="text-white font-semibold text-sm">Incisione Alta Prec.</h4>
-                            <p class="text-gray-400 text-xs">Taglio Laser CNC</p>
+                            <h4 class="text-brand-dark font-semibold text-sm">Incisione di Precisione</h4>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: "CRAZY 3D" Interactive Plaque -->
+            <!-- Right Column: "CRAZY 3D" Interactive Plaque in light environment -->
             <div class="order-1 lg:order-2 perspective-container w-full max-w-lg mx-auto lg:ml-auto cursor-crosshair">
                 <div class="plaque-card">
                     <!-- Screws -->
@@ -251,14 +341,15 @@
                     <!-- Engraved Content -->
                     <div class="plaque-inner">
                         <div class="w-full text-center px-4">
-                            <h3 class="engraved font-serif italic text-lg md:text-xl font-bold mb-3 tracking-wide">
+                            <h3 class="engraved font-serif italic text-lg md:text-xl font-medium mb-3 tracking-wide">
                                 Studio Legale & Notarile
                             </h3>
-                            <div class="w-24 h-[1px] bg-[#4A3B1B] opacity-40 mx-auto mb-4"></div>
-                            <h2 class="engraved font-serif text-3xl md:text-5xl font-black uppercase tracking-widest leading-none mb-4">
+                            <div class="w-16 h-[1.5px] bg-[#4A3B1B] opacity-30 mx-auto mb-4"></div>
+                            <h2
+                                class="engraved font-serif text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-widest leading-none mb-4">
                                 Rossi & Bianchi
                             </h2>
-                            <p class="engraved font-sans text-sm md:text-base font-semibold tracking-widest uppercase">
+                            <p class="engraved font-sans text-xs md:text-sm font-semibold tracking-[0.2em] uppercase">
                                 Associati
                             </p>
                         </div>
@@ -267,19 +358,167 @@
                     <!-- Dynamic Glare Layer -->
                     <div class="plaque-glare"></div>
                 </div>
+                <!-- Soft shadow for realistic grounding on light theme -->
+                <div class="w-[90%] h-8 bg-black/5 mx-auto mt-4 rounded-full blur-xl transform scale-y-50"></div>
             </div>
 
         </div>
     </main>
 
-    <!-- Sticky Bottom CTA for Mobile (CRO optimized) -->
-    <div id="sticky-cta" class="fixed bottom-0 left-0 w-full bg-charcoal/95 backdrop-blur-md border-t border-white/10 p-4 transform translate-y-full transition-transform duration-300 flex justify-between items-center z-50 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.5)]">
-        <div class="flex flex-col">
-            <span class="text-xs text-gray-400 uppercase tracking-widest">Targa in Ottone</span>
-            <span class="text-lg font-bold text-gold">Da 44,00€</span>
+    <!-- NEW SECTION: Focus Products Gallery (Law, Notary, Brass) as requested by UX/UI redesign scope -->
+    <section class="py-24 bg-brand-beige">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <!-- Divider styling mimicking screenshot -->
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-px bg-gray-300 w-16 md:w-32"></div>
+                    <h2 class="text-2xl md:text-3xl font-light text-brand-dark">Targhe e targhette per la tua attività
+                    </h2>
+                    <div class="h-px bg-gray-300 w-16 md:w-32"></div>
+                </div>
+                <p class="text-gray-500 mt-2">Scopri i nostri prodotti di punta progettati per l'eccellenza
+                    professionale.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Category 1: Studio Legale -->
+                <div
+                    class="category-card bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm relative group cursor-pointer flex flex-col h-full">
+                    <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                        <!-- Simulated professional photo background -->
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800');">
+                        </div>
+                        <div class="absolute inset-0 bg-black/10 transition-opacity group-hover:opacity-0"></div>
+
+                        <!-- Floating Plaque Mockup inside image -->
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/5 aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-300 border border-gray-400 rounded shadow-2xl flex items-center justify-center">
+                            <div class="text-center">
+                                <svg class="w-6 h-6 mx-auto text-gray-700 mb-1" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                                    </path>
+                                </svg>
+                                <span class="block text-gray-800 font-serif text-sm font-bold">Studio Legale</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-brand-teal uppercase tracking-wider">Altamura
+                                Lusso</span>
+                            <h3 class="text-xl font-semibold text-brand-dark mt-2 mb-2">Targhe per Studio Legale</h3>
+                            <p class="text-gray-500 text-sm line-clamp-2">Progettate per trasmettere solennità e
+                                autorevolezza. Materiali duraturi resistenti agli agenti atmosferici.</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-brand-dark font-bold">Da 49,00€</span>
+                            <span class="text-brand-teal text-sm font-medium group-hover:underline">Configura
+                                &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Studio Notarile -->
+                <div
+                    class="category-card bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm relative group cursor-pointer flex flex-col h-full">
+                    <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=800'); filter: sepia(0.2);">
+                        </div>
+                        <div class="absolute inset-0 bg-black/10 transition-opacity group-hover:opacity-0"></div>
+
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/5 aspect-[16/10] bg-gradient-to-br from-[#D4AF37] to-[#8B6508] border border-[#AA7C11] rounded shadow-2xl flex items-center justify-center p-2">
+                            <div class="w-full h-full border border-black/10 flex flex-col items-center justify-center">
+                                <div class="w-4 h-4 rounded-full bg-red-800/80 mb-1 border border-red-900 shadow-inner">
+                                </div>
+                                <span
+                                    class="block text-[#3d2c05] font-serif text-[10px] font-bold uppercase tracking-widest text-center">Studio<br>Notarile</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-brand-teal uppercase tracking-wider">Linea
+                                Classica</span>
+                            <h3 class="text-xl font-semibold text-brand-dark mt-2 mb-2">Targhe per Studio Notarile</h3>
+                            <p class="text-gray-500 text-sm line-clamp-2">L'intramontabile eleganza dell'ottone inciso,
+                                spesso accompagnato da dettagli e smalti per un impatto istituzionale perfetto.</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-brand-dark font-bold">Da 54,00€</span>
+                            <span class="text-brand-teal text-sm font-medium group-hover:underline">Configura
+                                &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Targhe in Ottone (General) -->
+                <div
+                    class="category-card bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm relative group cursor-pointer flex flex-col h-full">
+                    <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800');">
+                        </div>
+                        <div class="absolute inset-0 bg-black/10 transition-opacity group-hover:opacity-0"></div>
+
+                        <!-- Close up of brass texture -->
+                        <div
+                            class="absolute w-[120%] h-[120%] top-[-10%] left-[-10%] bg-gradient-to-br from-[#D4AF37] via-[#F8E7A0] to-[#8B6508] transform rotate-12 opacity-90 shadow-2xl skew-y-6">
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <h4 class="text-2xl font-serif italic text-[#3d2c05] drop-shadow-md z-10 px-4 text-center">
+                                Incisione<br>CNC Millimetrica</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-brand-teal uppercase tracking-wider">Materiali
+                                Puri</span>
+                            <h3 class="text-xl font-semibold text-brand-dark mt-2 mb-2">Targhe in Ottone Massiccio</h3>
+                            <p class="text-gray-500 text-sm line-clamp-2">Non solo per studi. Crea targhe in ottone
+                                dorato lucido, satinato o brunito per qualsiasi tipo di struttura, hotel o clinica.</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-brand-dark font-bold">Da 44,00€</span>
+                            <span class="text-brand-teal text-sm font-medium group-hover:underline">Configura
+                                &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <button
+                    class="inline-flex items-center justify-center px-8 py-3 bg-white border border-gray-300 hover:border-brand-teal hover:text-brand-teal text-gray-700 font-medium text-sm rounded transition-all">
+                    Vedi l'intero catalogo prodotti
+                </button>
+            </div>
         </div>
-        <button class="bg-gold hover:bg-gold-light text-navy font-bold px-6 py-3 rounded text-sm uppercase tracking-wide shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-            Configura Ora
+    </section>
+
+    <!-- Footer Light -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-400 text-sm">© 2026 Targhe Professionali. Tutti i diritti riservati. Prototipo UX/UI.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom CTA for Mobile (CRO optimized) -->
+    <div id="sticky-cta"
+        class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 transform translate-y-full transition-transform duration-300 flex justify-between items-center z-50 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col">
+            <span class="text-xs text-brand-teal font-bold uppercase tracking-widest">Targhe in Ottone</span>
+            <span class="text-lg font-light text-brand-dark">Da 44,00€</span>
+        </div>
+        <button class="bg-brand-teal text-white font-medium px-6 py-2.5 rounded text-sm shadow-md">
+            Configura
         </button>
     </div>
 
@@ -293,8 +532,7 @@
             const container = document.querySelector('.perspective-container');
             const card = document.querySelector('.plaque-card');
             const glare = document.querySelector('.plaque-glare');
-            
-            // Check for touch devices to avoid breaking mobile experiences
+
             const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
             if (!isTouch && container && card) {
@@ -303,38 +541,32 @@
                 let mouseX = 0;
                 let mouseY = 0;
 
-                // RAF Loop for silky smooth performance
                 function updateCard() {
                     if (!isHovering) return;
-                    
+
                     const centerX = bounds.width / 2;
                     const centerY = bounds.height / 2;
-                    
-                    // Normalized coordinates (-1 to 1)
+
                     const percentX = (mouseX - centerX) / centerX;
                     const percentY = (mouseY - centerY) / centerY;
-                    
-                    // Tilt Settings
-                    const maxTilt = 12; // Degrees
+
+                    const maxTilt = 10; // Slightly reduced for elegance in light theme
                     const rotateX = percentY * -maxTilt;
                     const rotateY = percentX * maxTilt;
-                    
-                    // Apply 3D transform
+
                     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                    
-                    // Adjust dynamic Glare to follow the "light source"
+
                     const glareX = (mouseX / bounds.width) * 100;
                     const glareY = (mouseY / bounds.height) * 100;
-                    glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.6) 0%, transparent 60%)`;
-                    
+                    glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.8) 0%, transparent 60%)`;
+
                     requestAnimationFrame(updateCard);
                 }
 
                 container.addEventListener('mouseenter', () => {
                     bounds = container.getBoundingClientRect();
                     isHovering = true;
-                    // Remove transition duration on hover for instant mouse tracking
-                    card.style.transition = 'none'; 
+                    card.style.transition = 'none';
                     requestAnimationFrame(updateCard);
                 });
 
@@ -345,8 +577,7 @@
 
                 container.addEventListener('mouseleave', () => {
                     isHovering = false;
-                    // Restore smooth transition on snap back
-                    card.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                    card.style.transition = 'transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
                     card.style.transform = `rotateX(0deg) rotateY(0deg)`;
                     glare.style.opacity = '0';
                 });
@@ -359,14 +590,11 @@
             const stickyCta = document.getElementById('sticky-cta');
 
             if (mainCtaContainer && stickyCta) {
-                // Feature that shows the bottom sticky CTA ONLY when the main CTA scrolls out of view on mobile
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (!entry.isIntersecting) {
-                            // Main CTA non visibile, alza la barra sticky
                             stickyCta.classList.remove('translate-y-full');
                         } else {
-                            // Main CTA in visuale, nascondi la barra sticky
                             stickyCta.classList.add('translate-y-full');
                         }
                     });
@@ -378,4 +606,5 @@
     </script>
 
 </body>
+
 </html>
